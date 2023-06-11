@@ -1,0 +1,15 @@
+
+.imagen-proyectos{
+    height: auto;
+    width: 300px;
+}
+
+.imagen-profile{
+    height: auto;
+    width: 300px;
+}
+
+.card-project:hover{
+    border: 1px solid blue;
+    cursor:pointer;
+}
