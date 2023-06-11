@@ -11,13 +11,14 @@ body.light-mode {
 }
 
 .imagen-proyectos{
+  /* Actualmente sin funcionar*/
     height: auto;
-    width: 300px;
+    width: 200px;
 }
 
 .imagen-profile{
     height: auto;
-    width: 300px;
+    width: 100px;
 }
 
 .card-project:hover{
@@ -34,14 +35,29 @@ body.dark-mode .card-project:hover{
     /* Estilos para las cards en modo claro */
     background-color: white ;
     color: black;
-    border: 3px solid gray; /* Estilo de borde deseado */
+    border: 2px solid gray; /* Estilo de borde deseado */
     border-radius: 5px; /* Opcional: añade esquinas redondeadas al borde */
+
   }
+
+  .card-text{
+    height: 50px;
+    width: auto;
+  }
+
+  .card-body{
+    height: 180px;
+    width: auto;
+  }
+ 
   
   body.dark-mode .card {
     /* Estilos para las cards en modo oscuro */
     background-color: black;
     color: white ;
+    border: 2px solid gray; /* Estilo de borde deseado */
+    border-radius: 5px; /* Opcional: añade esquinas redondeadas al borde */
+
   }
 
   body.dark-mode a.navbar-brand {
@@ -62,4 +78,9 @@ body.dark-mode .card-project:hover{
   body.dark-mode .navbar {
     border-bottom: 3px solid white; /* Estilo de borde deseado */
     border-radius: 5px; /* Opcional: añade esquinas redondeadas al borde */
+  }
+
+  body.dark-mode .navbar-toggler{
+    background-color: black !important;
+    color: white !important;
   }
