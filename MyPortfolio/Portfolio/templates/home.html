@@ -2,11 +2,13 @@
 {% load static %}
 
 {% block content %}
+<div class="card card-body rounded-5" style="">
     <div class="row">
-        <div class="col-md-4">
-            <img style="width: 300px; height: auto; border-radius: 50%;" src="{% static 'portfolio/profile.JPEG' %}" alt="profile">
+        <div class="col-md-3">
+            <img style="width: 250px; height: auto; border-radius: 50%;" src="{% static 'portfolio/profile.JPEG' %}" alt="profile">
         </div>
-        <div class="col-md-8 my-auto">
+        <div class="col-md-9 my-auto">
+
             <h1>I am <strong>Paz, Augusto Cesar</strong></h1>
             <h3>I am a Python FullStack Developer</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
@@ -16,36 +18,39 @@
             <a href="{% static 'portfolio/CV_PA.pdf' %}" class="btn btn-primary btn-lg rounded-0 my-3" target="_blank">
                 Download CV
             </a>
+
         </div>
     </div>
+</div>
+    
     
     <div class="row my-4 text-center">
 
     
-    <h3>My Projects</h3>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, eligendi.</p>
+        <h3>My Projects</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, eligendi.</p>
 
-    {% if projects %}
-        {% for project in projects %}
-            <div class="col-md-4 p-4">
-                <div class="card card-project">
-                    <img class="img-fluid card-img-top" src="{{project.image.url}}" 
-                    alt="{{project.title}}" style="width: auto; height: 200px;">
-                    <div class="card-body">
-                        <h5 class="card-title">{{project.title}}</h5>
-                        <p class="card-text">{{project.description|striptags|truncatechars:70}}</p>
-                        {% if project.url %}
-                            <a href="{{project.url}}" class="btn btn-light rounded-0 btn-sm"
-                            target="_blank">{{project.url}}</a>
-                        {% endif %}
+        {% if projects %}
+            {% for project in projects %}
+                <div class="col-md-4 p-4">
+                    <div class="card card-project">
+                        <img class="img-fluid card-img-top" src="{{project.image.url}}" 
+                        alt="{{project.title}}" style="width: auto; height: 200px;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{project.title}}</h5>
+                            <p class="card-text">{{project.description|striptags|truncatechars:70}}</p>
+                            {% if project.url %}
+                                <a href="{{project.url}}" class="btn btn-light rounded-0 btn-sm"
+                                target="_blank">{{project.url}}</a>
+                            {% endif %}
 
+                        </div>
                     </div>
                 </div>
-            </div>
 
-        {% endfor %}
-    {% else %}
-        <h2>No hay proyectos</h2>
-    {% endif %}
-</div>
+            {% endfor %}
+        {% else %}
+            <h2>No hay proyectos</h2>
+        {% endif %}
+    </div>
 {% endblock %}

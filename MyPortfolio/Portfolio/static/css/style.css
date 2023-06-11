@@ -1,86 +1,90 @@
 /* Estilos para el modo oscuro */
 body.dark-mode {
-    background-color: black !important;
-    color: white !important;
+  background-color: black !important;
+  color: white !important;
 }
 
 /* Estilos para el modo claro */
 body.light-mode {
-    background-color: white !important;
-    color: black !important;
+  background-color: #f2f1f7 !important;
+  color: black !important;
 }
 
 .imagen-proyectos{
-  /* Actualmente sin funcionar*/
-    height: auto;
-    width: 200px;
+/* Actualmente sin funcionar*/
+  height: auto;
+  width: 200px;
 }
 
 .imagen-profile{
-    height: auto;
-    width: 100px;
+  /* No funciona actualmente */
+  height: auto;
+  width: 100px;
 }
 
 .card-project:hover{
-    border: 1px solid black;
-    cursor:pointer;
+  border: 1px solid black;
+  cursor:pointer;
 }
 
 body.dark-mode .card-project:hover{
-    border: 1px solid white;
-    cursor:pointer;
+  border: 1px solid white;
+  cursor:pointer;
 }
 
 .card {
-    /* Estilos para las cards en modo claro */
-    background-color: white ;
-    color: black;
-    border: 2px solid gray; /* Estilo de borde deseado */
-    border-radius: 5px; /* Opcional: añade esquinas redondeadas al borde */
+  /* Estilos para las cards en modo claro */
+  background-color: white !important ;
+  color: black;
+  border: 2px solid gray; /* Estilo de borde deseado */
+  border-radius: 5px; /* Opcional: añade esquinas redondeadas al borde */
 
-  }
+}
 
-  .card-text{
-    height: 50px;
-    width: auto;
-  }
+.card-text{
+  height: 50px;
+  width: auto;
+}
 
-  .card-body{
-    height: 180px;
-    width: auto;
-  }
- 
-  
-  body.dark-mode .card {
-    /* Estilos para las cards en modo oscuro */
-    background-color: black;
-    color: white ;
-    border: 2px solid gray; /* Estilo de borde deseado */
-    border-radius: 5px; /* Opcional: añade esquinas redondeadas al borde */
+.card-body{
+  height: 180px;
+  width: auto;
+}
 
-  }
 
-  body.dark-mode a.navbar-brand {
-    /* Estilos para el enlace en modo claro */
-    color:black;
-  }
+body.dark-mode .card {
+  /* Estilos para las cards en modo oscuro */
+  background-color: #1c1c1e !important;
+  color: white ;
+  border: 2px solid gray; /* Estilo de borde deseado */
+  border-radius: 5px; /* Opcional: añade esquinas redondeadas al borde */
 
-  body.dark-mode a.navbar-brand {
-    /* Estilos para el enlace en modo claro */
-    color:white;
-  }
+}
 
-  .navbar {
-    border-bottom: 3px solid black; /* Estilo de borde deseado */
-    border-radius: 5px; /* Opcional: añade esquinas redondeadas al borde */
-  }
+body.dark-mode a.navbar-brand {
+  /* Estilos para el enlace en modo claro */
+  color:black;
+}
 
-  body.dark-mode .navbar {
-    border-bottom: 3px solid white; /* Estilo de borde deseado */
-    border-radius: 5px; /* Opcional: añade esquinas redondeadas al borde */
-  }
+body.dark-mode a.navbar-brand {
+  /* Estilos para el enlace en modo claro */
+  color:white;
+}
 
-  body.dark-mode .navbar-toggler{
-    background-color: black !important;
-    color: white !important;
-  }
+.navbar {
+  border-bottom: 3px solid black; /* Estilo de borde deseado */
+  border-radius: 5px; /* Opcional: añade esquinas redondeadas al borde */
+  background-color:white;
+}
+
+body.dark-mode .navbar {
+  border-bottom: 3px solid white; /* Estilo de borde deseado */
+  border-radius: 5px; /* Opcional: añade esquinas redondeadas al borde */
+  background-color:#1c1c1e;
+}
+
+body.dark-mode .navbar-toggler{
+  /* No funciona actualmente */
+  background-color: black !important;
+  color: white !important;
+}
