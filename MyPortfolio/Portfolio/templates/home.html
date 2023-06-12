@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% load static %}
-
+{% block title %}My Portflio{% endblock %}
 {% block content %}
 <div class="card card-body rounded-5" style="">
     <div class="row">
@@ -15,10 +15,15 @@
                 Ipsa ratione assumenda nobis. Accusamus incidunt nemo obcaecati natus!
                  Magni animi, aliquid veritatis minima sed numquam impedit distinctio consequatur 
                  aliquam quod quasi!00</p>
-            <a href="{% static 'portfolio/CV_PA.pdf' %}" class="btn btn-primary btn-lg rounded-0 my-3" target="_blank">
-                Download CV
+            <a href="{% static 'portfolio/CV_PA.pdf' %}" class="btn btn-primary btn-lg rounded-3 my-3" target="_blank">
+                <i class="fa-thin fa-file-user"></i> Descargar CV
             </a>
-
+            <!-- <a href="https://www.linkedin.com/in/augusto-p-698947159/" class="btn btn-primary btn-lg rounded-3 my-3" target="_blank">
+                <i class="fa-brands fa-linkedin fa-lg"></i> LinkedIn
+            </a> -->
+            <!-- <a href="https://github.com/AugustP748" class="btn btn-light btn-lg rounded-3 my-3" target="_blank">
+                <i class="fa-brands fa-github fa-2xl" style="color: #212731;"></i> GitHub
+            </a> -->
         </div>
     </div>
 </div>
@@ -30,27 +35,28 @@
         <h3>My Projects</h3>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, eligendi.</p>
 
-        {% if projects %}
+        {% if projects and Are_All_Not_Visible == False %}
             {% for project in projects %}
-                <div class="col-md-4 p-4">
-                    <div class="card card-project">
-                        <img class="img-fluid card-img-top" src="{{project.image.url}}" 
-                        alt="{{project.title}}" style="width: auto; height: 200px;">
-                        <div class="card-body">
-                            <h5 class="card-title">{{project.title}}</h5>
-                            <p class="card-text">{{project.description|striptags|truncatechars:70}}</p>
-                            {% if project.url %}
-                                <a href="{{project.url}}" class="btn btn-light rounded-0 btn-sm"
-                                target="_blank">{{project.url}}</a>
-                            {% endif %}
+                {% if project.visible %}
+                    <div class="col-md-4 p-4">
+                        <div class="card card-project">
+                            <img class="img-fluid card-img-top imagen-proyectos" src="{{project.image.url}}" 
+                            alt="{{project.title}}" style="width: auto; height: 200px;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{project.title}}</h5>
+                                <p class="card-text">{{project.description|striptags|truncatechars:70}}</p>
+                                {% if project.url %}
+                                    <a href="{{project.url}}" class="btn btn-light rounded-3 btn-sm" style="border: 2px solid grey;"
+                                    target="_blank"><i class="fa-brands fa-github fa-2xl" style="color: #212731;"></i> View Code</a>
+                                {% endif %}
 
+                            </div>
                         </div>
                     </div>
-                </div>
-
+                {% endif %}
             {% endfor %}
         {% else %}
-            <h2>No hay proyectos</h2>
+            <h2>There isn't Any Project here</h2>
         {% endif %}
     </div>
 {% endblock %}

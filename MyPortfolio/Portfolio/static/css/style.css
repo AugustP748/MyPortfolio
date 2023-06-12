@@ -16,6 +16,11 @@ body.light-mode {
   width: 200px;
 }
 
+/*
+.imagen-proyectos:hover{
+  filter: blur(3px);
+}*/
+
 .imagen-profile{
   /* No funciona actualmente */
   height: auto;
@@ -25,11 +30,15 @@ body.light-mode {
 .card-project:hover{
   border: 1px solid black;
   cursor:pointer;
+  transform: scale(1,1) !important; /* No funciona */
+  transition: 2s !important; /* No funciona */
 }
 
 body.dark-mode .card-project:hover{
   border: 1px solid white;
   cursor:pointer;
+  transform: scale(1,1) !important; /* No funciona */
+  transition: 2s !important; /* No funciona */
 }
 
 .card {
@@ -38,7 +47,6 @@ body.dark-mode .card-project:hover{
   color: black;
   border: 2px solid gray; /* Estilo de borde deseado */
   border-radius: 5px; /* Opcional: añade esquinas redondeadas al borde */
-
 }
 
 .card-text{
