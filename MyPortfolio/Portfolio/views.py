@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Project
+from Projects.models import Project
 from django.db.models import Q
 # Create your views here.
 def home(request):
