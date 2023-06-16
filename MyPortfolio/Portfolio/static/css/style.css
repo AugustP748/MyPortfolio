@@ -8,6 +8,9 @@ body.dark-mode {
 body.light-mode {
   background-color: #f2f1f7 !important;
   color: black !important;
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
 }
 
 .imagen-proyectos{
@@ -30,14 +33,14 @@ body.light-mode {
 .card-project:hover{
   border: 1px solid black;
   cursor:pointer;
-  transform: scale(1,1) !important; /* No funciona */
+  transform: scale(1.5,1.5) !important; /* No funciona */
   transition: 2s !important; /* No funciona */
 }
 
 body.dark-mode .card-project:hover{
   border: 1px solid white;
   cursor:pointer;
-  transform: scale(1,1) !important; /* No funciona */
+  transform: scale(1.5) !important; /* No funciona */
   transition: 2s !important; /* No funciona */
 }
 
@@ -95,4 +98,11 @@ body.dark-mode .navbar-toggler{
   /* No funciona actualmente */
   background-color: black !important;
   color: white !important;
+}
+
+.footer{
+  background-color:white;
+  border-top: 3px solid black; /* Estilo de borde deseado */
+  border-bottom: 3px solid black; /* Estilo de borde deseado */
+
 }

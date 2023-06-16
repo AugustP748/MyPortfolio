@@ -2,7 +2,7 @@
 {% load static %}
 {% block title %}My Portflio{% endblock %}
 {% block content %}
-<div class="card card-body rounded-5" style="">
+<div class="card card-body rounded-5 animate__animated animate__fadeIn" style="">
     <div class="row">
         <div class="col-md-3">
             <img style="width: 250px; height: auto; border-radius: 50%;" src="{% static 'portfolio/profile.JPEG' %}" alt="profile">
@@ -39,7 +39,7 @@
             {% for project in projects %}
                 {% if project.visible %}
                     <div class="col-md-4 p-4">
-                        <div class="card card-project">
+                        <div class="card card-project animate__animated animate__fadeIn ">
                             <img class="img-fluid card-img-top imagen-proyectos" src="{{project.image.url}}" 
                             alt="{{project.title}}" style="width: auto; height: 200px;">
                             <div class="card-body">
