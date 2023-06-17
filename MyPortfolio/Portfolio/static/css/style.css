@@ -2,6 +2,9 @@
 body.dark-mode {
   background-color: black !important;
   color: white !important;
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
 }
 
 /* Estilos para el modo claro */
@@ -33,14 +36,14 @@ body.light-mode {
 .card-project:hover{
   border: 1px solid black;
   cursor:pointer;
-  transform: scale(1.5,1.5) !important; /* No funciona */
+  transform: scale(1,1) !important; /* No funciona */
   transition: 2s !important; /* No funciona */
 }
 
 body.dark-mode .card-project:hover{
   border: 1px solid white;
   cursor:pointer;
-  transform: scale(1.5) !important; /* No funciona */
+  transform: scale(1,1) !important; /* No funciona */
   transition: 2s !important; /* No funciona */
 }
 
@@ -92,6 +95,7 @@ body.dark-mode .navbar {
   border-bottom: 3px solid white; /* Estilo de borde deseado */
   border-radius: 5px; /* Opcional: añade esquinas redondeadas al borde */
   background-color:#1c1c1e;
+  color:white;
 }
 
 body.dark-mode .navbar-toggler{
@@ -100,9 +104,23 @@ body.dark-mode .navbar-toggler{
   color: white !important;
 }
 
+nav a {
+  color: black; /* Color de texto predeterminado */
+  text-decoration: none;
+}
+
+body.dark-mode nav a {
+  color: white; /* Color de texto en modo oscuro */
+}
+
 .footer{
   background-color:white;
   border-top: 3px solid black; /* Estilo de borde deseado */
   border-bottom: 3px solid black; /* Estilo de borde deseado */
+}
 
+body.dark-mode .footer{
+  background-color:#1c1c1e;
+  border-top: 3px solid white; /* Estilo de borde deseado */
+  border-bottom: 3px solid white; /* Estilo de borde deseado */
 }
