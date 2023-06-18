@@ -1,23 +1,20 @@
-/* Estilos para el modo oscuro */
-body.dark-mode {
-  background-color: black !important;
-  color: white !important;
-  display: grid;
-  min-height: 100vh;
-  grid-template-rows: auto 1fr auto;
-}
-
+@charset "UTF-8";
 /* Estilos para el modo claro */
-body.light-mode {
-  background-color: #f2f1f7 !important;
-  color: black !important;
+body {
+  background-color: #f2f1f7;
+  color: black;
   display: grid;
   min-height: 100vh;
   grid-template-rows: auto 1fr auto;
+  transition: 0.3s ease all;
+}
+body.dark {
+  background-color: black;
+  color: white;
 }
 
-.imagen-proyectos{
-/* Actualmente sin funcionar*/
+.imagen-proyectos {
+  /* Actualmente sin funcionar*/
   height: auto;
   width: 200px;
 }
@@ -26,101 +23,72 @@ body.light-mode {
 .imagen-proyectos:hover{
   filter: blur(3px);
 }*/
-
-.imagen-profile{
+.imagen-profile {
   /* No funciona actualmente */
   height: auto;
   width: 100px;
 }
 
-.card-project:hover{
-  border: 1px solid black;
-  cursor:pointer;
-  transform: scale(1,1) !important; /* No funciona */
-  transition: 2s !important; /* No funciona */
-}
-
-body.dark-mode .card-project:hover{
-  border: 1px solid white;
-  cursor:pointer;
-  transform: scale(1,1) !important; /* No funciona */
-  transition: 2s !important; /* No funciona */
-}
-
 .card {
   /* Estilos para las cards en modo claro */
-  background-color: white !important ;
+  background-color: white;
   color: black;
   border: 2px solid gray; /* Estilo de borde deseado */
   border-radius: 5px; /* Opcional: añade esquinas redondeadas al borde */
+  box-shadow: 10px 10px 20px rgba(170, 170, 170, 0.16);
+  cursor: pointer;
+}
+body.dark .card {
+  background: #1c1c1e;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.16);
+  border-color: white;
+}
+body.dark .card p, body.dark .card h5 {
+  color: white;
 }
 
-.card-text{
+.card-text {
   height: 50px;
   width: auto;
 }
 
-.card-body{
+.card-body {
   height: 180px;
   width: auto;
-}
-
-
-body.dark-mode .card {
-  /* Estilos para las cards en modo oscuro */
-  background-color: #1c1c1e !important;
-  color: white ;
-  border: 2px solid gray; /* Estilo de borde deseado */
-  border-radius: 5px; /* Opcional: añade esquinas redondeadas al borde */
-
-}
-
-body.dark-mode a.navbar-brand {
-  /* Estilos para el enlace en modo claro */
-  color:black;
-}
-
-body.dark-mode a.navbar-brand {
-  /* Estilos para el enlace en modo claro */
-  color:white;
 }
 
 .navbar {
   border-bottom: 3px solid black; /* Estilo de borde deseado */
   border-radius: 5px; /* Opcional: añade esquinas redondeadas al borde */
-  background-color:white;
+  background-color: white;
+  box-shadow: 10px 10px 20px rgba(170, 170, 170, 0.16);
+}
+body.dark .navbar {
+  background: #1c1c1e;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.16);
+  border-color: white;
+}
+body.dark .navbar a {
+  color: #f2f1f7;
+}
+body.dark .navbar a:hover {
+  color: white;
 }
 
-body.dark-mode .navbar {
-  border-bottom: 3px solid white; /* Estilo de borde deseado */
-  border-radius: 5px; /* Opcional: añade esquinas redondeadas al borde */
-  background-color:#1c1c1e;
-  color:white;
-}
-
-body.dark-mode .navbar-toggler{
-  /* No funciona actualmente */
-  background-color: black !important;
-  color: white !important;
-}
-
-nav a {
-  color: black; /* Color de texto predeterminado */
-  text-decoration: none;
-}
-
-body.dark-mode nav a {
-  color: white; /* Color de texto en modo oscuro */
-}
-
-.footer{
-  background-color:white;
+.footer {
+  background-color: white;
   border-top: 3px solid black; /* Estilo de borde deseado */
   border-bottom: 3px solid black; /* Estilo de borde deseado */
+  box-shadow: #1c1c1e;
+}
+body.dark .footer {
+  background: #1c1c1e;
+  box-shadow: #f2f1f7;
+  border-color: white;
 }
 
-body.dark-mode .footer{
-  background-color:#1c1c1e;
+body.dark-mode .footer {
+  background-color: #1c1c1e;
   border-top: 3px solid white; /* Estilo de borde deseado */
   border-bottom: 3px solid white; /* Estilo de borde deseado */
-}
+}/*# sourceMappingURL=style.css.map */
