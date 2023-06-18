@@ -1,5 +1,5 @@
 $grisOscuro: #1c1c1e;
-$grisClaro:#f2f1f7;
+$grisClaro:#f2f1f7f1;
 
 $sombraDark: 10px 10px 20px rgba(170,170,170,.16);
 $sombraLight: 10px 10px 20px rgba(0,0,0,.16);
@@ -47,12 +47,21 @@ body {
   box-shadow: $sombraDark;
   cursor:pointer;
 
+  &:hover {
+    border-width: 4px;
+    border-color: dark;
+  }
+
   body.dark & {
     background: $grisOscuro;
     box-shadow: $sombraLight;
-    border-color: white;
+    border-color: $sombraLight;
     p, h5 {
       color:white;
+    }
+    &:hover {
+      border-width: 4px;
+      border-color: white;
     }
   }
 }
@@ -87,6 +96,14 @@ body {
   }
 }
 
+.navbar-toggler-icon {
+  color: red !important;
+
+  body.dark &{
+    color:white !important;
+  }
+}
+
 .footer{
   background-color:white;
   border-top: 3px solid black; /* Estilo de borde deseado */
@@ -106,3 +123,6 @@ body.dark-mode .footer{
   border-bottom: 3px solid white; /* Estilo de borde deseado */
 }
 
+.btn-circle {
+  border-radius: 50%;
+}
