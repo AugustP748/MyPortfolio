@@ -1,5 +1,5 @@
 $grisOscuro: #1c1c1e;
-$grisClaro:#f2f1f7f1;
+$grisClaro:#f2f1f7e0;
 
 $sombraDark: 10px 10px 20px rgba(170,170,170,.16);
 $sombraLight: 10px 10px 20px rgba(0,0,0,.16);
@@ -37,7 +37,6 @@ body {
   width: 100px;
 }
 
-
 .card {
   /* Estilos para las cards en modo claro */
   background-color: white ;
@@ -46,9 +45,10 @@ body {
   border-radius: 5px; /* Opcional: añade esquinas redondeadas al borde */
   box-shadow: $sombraDark;
   cursor:pointer;
+  transition: all 0.3s;
 
   &:hover {
-    border-width: 4px;
+    transform: scale(1.15);
     border-color: dark;
   }
 
@@ -60,7 +60,6 @@ body {
       color:white;
     }
     &:hover {
-      border-width: 4px;
       border-color: white;
     }
   }

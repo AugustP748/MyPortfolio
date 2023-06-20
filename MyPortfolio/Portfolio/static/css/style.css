@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* Estilos para el modo claro */
 body {
-  background-color: rgba(242, 241, 247, 0.9450980392);
+  background-color: rgba(242, 241, 247, 0.8784313725);
   color: black;
   display: grid;
   min-height: 100vh;
@@ -37,9 +37,10 @@ body.dark {
   border-radius: 5px; /* Opcional: añade esquinas redondeadas al borde */
   box-shadow: 10px 10px 20px rgba(170, 170, 170, 0.16);
   cursor: pointer;
+  transition: all 0.3s;
 }
 .card:hover {
-  border-width: 4px;
+  transform: scale(1.15);
   border-color: dark;
 }
 body.dark .card {
@@ -51,7 +52,6 @@ body.dark .card p, body.dark .card h5 {
   color: white;
 }
 body.dark .card:hover {
-  border-width: 4px;
   border-color: white;
 }
 
@@ -77,7 +77,7 @@ body.dark .navbar {
   border-color: white;
 }
 body.dark .navbar a {
-  color: rgba(242, 241, 247, 0.9450980392);
+  color: rgba(242, 241, 247, 0.8784313725);
 }
 body.dark .navbar a:hover {
   color: white;
@@ -98,7 +98,7 @@ body.dark .navbar-toggler-icon {
 }
 body.dark .footer {
   background: #1c1c1e;
-  box-shadow: rgba(242, 241, 247, 0.9450980392);
+  box-shadow: rgba(242, 241, 247, 0.8784313725);
   border-color: white;
 }
 
