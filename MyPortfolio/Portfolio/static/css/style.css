@@ -3,14 +3,20 @@
   --grayLightTheme: #f2f1f7e0;
 }
 /* Estilos para el modo claro */
+
+main{
+  background-color: var(--grayLightTheme);
+}
+
 body {
   display: grid;
   min-height: 100vh;
   grid-template-rows: auto 1fr auto;
   transition: 0.3s ease all;
+  
 }
 
-body.dark {
+body.dark main {
   background-color: black;
   color: white;
 }
@@ -41,12 +47,18 @@ body.dark {
   /*border-radius: 5px;*/ /* Opcional: añade esquinas redondeadas al borde */
   box-shadow: 10px 10px 20px rgba(170, 170, 170, 0.16);
   /*cursor: pointer;*/
-  transition: all 0.3s;
 }
-.card:hover {
-  transform: scale(1.01);
+
+.card-project{
+  cursor:pointer;
+  transition: all 0.3s;
 
 }
+
+.card-project:hover {
+  transform: scale(1.07);
+}
+
 body.dark .card {
   background: var(--greyDarkTheme);
 }
@@ -72,7 +84,7 @@ body.dark .card:hover {
 
 .navbar {
   border-bottom: 3px solid black; /* Estilo de borde deseado */
-  border-radius: 5px; /* Opcional: añade esquinas redondeadas al borde */
+  border-radius: 0 0 5px 5px; /* Opcional: añade esquinas redondeadas al borde */
   background-color: white;
 }
 body.dark .navbar {

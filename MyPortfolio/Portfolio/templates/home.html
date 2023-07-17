@@ -2,44 +2,46 @@
 {% load static %}
 {% block title %}My Portflio{% endblock %}
 {% block content %}
-<div class="card card-body rounded-5 animate__animated animate__fadeIn" style="">
-    <div class="row">
-        <div class="col-md-3">
-            <img style="width: 250px; height: auto; border-radius: 50%;" src="{% static 'portfolio/profile.JPEG' %}" alt="profile">
-        </div>
-        <div class="col-md-9 my-auto">
+    <section>
+        <div class="card card-body rounded-5 animate__animated animate__zoomIn" style="">
+            <div class="row">
+                <div class="col-md-3">
+                    <img style="width: 250px; height: auto; border-radius: 50%;" src="{% static 'portfolio/profile.JPEG' %}" alt="profile">
+                </div>
+                <div class="col-md-9 my-auto">
 
-            <h1>I am <strong>Paz, Augusto Cesar</strong></h1>
-            <h3>I am a Python FullStack Developer</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                Ipsa ratione assumenda nobis. Accusamus incidunt nemo obcaecati natus!
-                 Magni animi, aliquid veritatis minima sed numquam impedit distinctio consequatur 
-                 aliquam quod quasi!00</p>
-            <!-- <a href="{% static 'portfolio/CV_PA.pdf' %}" class="btn btn-primary btn-lg rounded-3 my-3" target="_blank">
-                <i class="fa-thin fa-file-user"></i> Descargar CV
-            </a> -->
-            <a href="https://www.linkedin.com/in/augusto-p-698947159/" class="btn btn-primary btn-circle btn-lg my-3" target="_blank">
-                <i class="fa-brands fa-linkedin fa-2xl"></i> 
-            </a> 
-            <a href="https://github.com/AugustP748" class="btn btn-light btn-circle btn-lg my-3" target="_blank">
-                <i class="fa-brands fa-github fa-2xl" style="color: #212731;"></i>
-            </a>
+                    <h1>I am <strong>Paz, Augusto Cesar</strong></h1>
+                    <h3>I am a Python FullStack Developer</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                        Ipsa ratione assumenda nobis. Accusamus incidunt nemo obcaecati natus!
+                        Magni animi, aliquid veritatis minima sed numquam impedit distinctio consequatur 
+                        aliquam quod quasi!00</p>
+                    <!-- <a href="{% static 'portfolio/CV_PA.pdf' %}" class="btn btn-primary btn-lg rounded-3 my-3" target="_blank">
+                        <i class="fa-thin fa-file-user"></i> Descargar CV
+                    </a> -->
+                    <a href="https://www.linkedin.com/in/augusto-p-698947159/" class="btn btn-primary btn-circle btn-lg my-3" target="_blank">
+                        <i class="fa-brands fa-linkedin fa-2xl"></i> 
+                    </a> 
+                    <a href="https://github.com/AugustP748" class="btn btn-light btn-circle btn-lg my-3" target="_blank">
+                        <i class="fa-brands fa-github fa-2xl" style="color: #212731;"></i>
+                    </a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    </section>
     
-    
-    <div class="row my-4 text-center justify-content-center">
+    <section class="row my-4 text-center justify-content-center">
 
-    
-        <h3>My Projects</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, eligendi.</p>
+        <div data-aos="zoom-in-down">
+            <h3>My Projects</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, eligendi.</p>
+        </div>
 
         {% if projects and Are_All_Not_Visible == False %}
             {% for project in projects %}
                 {% if project.visible %}
                     <div class="col-md-4 p-4">
-                        <div class="card card-project animate__animated animate__fadeIn ">
+                        <div class="card card-project" data-aos="zoom-in">
                             <img class="img-fluid card-img-top" src="{{project.image.url}}" 
                             alt="{{project.title}}" style="width: auto; height: 200px;">
                             <div class="card-body">
@@ -58,5 +60,5 @@
         {% else %}
             <h2>There isn't Any Project here</h2>
         {% endif %}
-    </div>
+    </section>
 {% endblock %}
