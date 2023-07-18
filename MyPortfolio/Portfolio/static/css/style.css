@@ -61,6 +61,7 @@ body.dark main {
 
 body.dark .card {
   background: var(--greyDarkTheme);
+  border-color: white;
 }
 /*
 body.dark .card p, body.dark .card h5 {
