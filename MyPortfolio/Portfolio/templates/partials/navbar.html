@@ -9,26 +9,35 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
 
-        <li class="nav-item d-flex align-items-center" style="margin-right: 3px;">
-            <!-- <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked">
-                <label class="form-check-label" for="flexSwitchCheckChecked">Modo oscuro</label> 
-            </div>-->
-            <button class="switch" id="switch">
-              <span><i class="fa-solid fa-sun"></i></span>
-              <span><i class="fa-solid fa-moon"></i></span>
-            </button>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="#section-home">Home</a>
           </li>
-
           <li class="nav-item">
             <a class="nav-link" href="{% url 'projects:home_projects' %}">Projects</a>
           </li>
-
+          <li class="nav-item">
+            <a class="nav-link" href="#section-habilidades">Habilidades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#section-tech">Tecnologías</a>
+          </li>
+          
+          <li class="nav-item d-flex align-items-center" style="margin-right: 3px;">
+              <!-- <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked">
+                  <label class="form-check-label" for="flexSwitchCheckChecked">Modo oscuro</label> 
+              </div>-->
+              <button class="switch" id="switch">
+                <span><i class="fa-solid fa-sun"></i></span>
+                <span><i class="fa-solid fa-moon"></i></span>
+              </button>
+            </li>
           <li class="nav-item d-flex align-items-center">
             <a class="btn btn-primary btn-sm" href="{% static 'portfolio/CV_PA.pdf' %}"
             target="_blank">Descargar CV</a>
           </li>
-
+          
         </ul>
       </div>
     </div>

@@ -2,7 +2,7 @@
 {% load static %}
 {% block title %}My Portflio{% endblock %}
 {% block content %}
-    <section>
+    <section id="section-home">
         <div class="card card-body rounded-5 animate__animated animate__zoomIn" style="">
             <div class="row">
                 <div class="col-md-3">
@@ -30,7 +30,7 @@
         </div>
     </section>
     
-    <section class="row my-4 text-center justify-content-center">
+    <section id="section-projects" class="row my-4 text-center justify-content-center">
 
         <div data-aos="zoom-in-down">
             <h3>My Projects</h3>
@@ -62,7 +62,7 @@
         {% endif %}
     </section>
 
-    <section data-aos="zoom-in-down">
+    <section id="section-habilidades" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
         <div class="card text-center rounded-5">
             
             <div class="card-body">
@@ -72,19 +72,20 @@
           </div>
     </section>
 
-    <section class="row my-4 text-center justify-content-center">
-        <div data-aos="zoom-in-down">
-            <h3><i class="fa-solid fa-code fa-lg"></i> Tecnologías</h3>
-            <div class="col-md-4 p-4">
-                
-                <div class="card">
-                    <!-- <img class="card-img-top" src="{% static 'images/Python-logo.png' %}" alt="Title">-->
-                    <div class="card-body">
-                        <h4 class="card-title">Python</h4>
- 
+    <section id="section-tech" class="row my-4 text-center justify-content-center" data-aos="fade-up">
+        
+            <h3><i class="fa-solid fa-code fa-lg"></i> Lenguajes de Programación</h3>
+    
+            {% if technologies %}
+                {% for tech in technologies %}
+                    <div class="col-md-4 p-4">
+                        <div class="card">
+                            <h5 class="card-title py-2 m-0">{{tech.name_Tech}}</h5>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
+                {% endfor %}
+            {% else %}
+                <h5 class="card-title">There's any technology here, back soon!</h5>
+            {% endif %}
     </section>
 {% endblock %}

@@ -107,6 +107,11 @@ body.dark .navbar a:hover {
   border-top: 3px solid black; /* Estilo de borde deseado */
   box-shadow: var(--greyDarkTheme);
 }
+
+.footer p{
+  margin:0;
+}
+
 body.dark .footer {
   background: var(--greyDarkTheme);
   border-color: white;
