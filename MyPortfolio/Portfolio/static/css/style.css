@@ -2,7 +2,7 @@
   --greyDarkTheme: #1c1c1e;
   --grayLightTheme: #f2f1f7e0;
 }
-/* Estilos para el modo claro */
+
 
 main{
   background-color: var(--grayLightTheme);
@@ -21,57 +21,27 @@ body.dark main {
   color: white;
 }
 
-.card-project img {
-  /* Actualmente sin funcionar*/
-  height: auto;
-  width: 200px;
-}
 
-/*
-.imagen-proyectos:hover{
-  filter: blur(3px);
-}*/
-
-
+/* ARREGLAR */ 
 .imagen-profile {
   /* No funciona actualmente */
   height: auto;
   width: 100px;
 }
 
+/* CARDS */ 
 .card {
   /* Estilos para las cards en modo claro */
   background-color: white;
-
-  /*border: 2px solid gray;*/ /* Estilo de borde deseado */
+  border: 2px solid gray; /* Estilo de borde deseado */
   /*border-radius: 5px;*/ /* Opcional: añade esquinas redondeadas al borde */
   box-shadow: 10px 10px 20px rgba(170, 170, 170, 0.16);
-  /*cursor: pointer;*/
-}
-
-.card-project{
-  cursor:pointer;
-  transition: all 0.3s;
-
-}
-
-.card-project:hover {
-  transform: scale(1.07);
 }
 
 body.dark .card {
   background: var(--greyDarkTheme);
   border-color: white;
 }
-/*
-body.dark .card p, body.dark .card h5 {
-  color: white;
-}*/
-
-/*
-body.dark .card:hover {
-  border-color: white;
-}*/
 
 .card-text {
   height: 50px;
@@ -83,6 +53,64 @@ body.dark .card:hover {
   width: auto;
 }
 
+/* CARDS PROFILE */ 
+.card-profile .btn-git{
+  border: 1px solid;
+}
+
+/* CARDS PROJECT */ 
+
+.card-project{
+  cursor:pointer;
+  transition: all 0.3s;
+  
+}
+
+.card-project img {
+  /* Actualmente sin funcionar*/
+  height: auto;
+  width: 200px;
+}
+
+.card-project:hover {
+  transform: scale(1.07);
+}
+
+/* CARDS EXPERIENCE */ 
+.card-experience .card-body{
+  text-align: left;
+}
+
+.card-experience .container{
+  background-color: var(--grayLightTheme);
+  border-radius: 20px;
+}
+
+/*
+body.dark .card p, body.dark .card h5 {
+  color: white;
+}*/
+
+/*
+body.dark .card:hover {
+  border-color: white;
+}*/
+
+/* CONTAINER SKILL  */ 
+.container-skill{
+  background-color: white;
+  border: 2px solid gray;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.container-skill:hover{
+  transform: scale(1.07);
+
+}
+
+
+/* NAVBAR */ 
 .navbar {
   border-bottom: 3px solid black; /* Estilo de borde deseado */
   border-radius: 0 0 5px 5px; /* Opcional: añade esquinas redondeadas al borde */
@@ -101,7 +129,7 @@ body.dark .navbar a:hover {
   color: white;
 }
 
-
+/* FOOTER */ 
 .footer {
   background-color: white;
   border-top: 3px solid black; /* Estilo de borde deseado */
@@ -117,7 +145,3 @@ body.dark .footer {
   border-color: white;
 }
 
-body.dark-mode .footer {
-  background-color: var(--greyDarkTheme);
-  border-top: 3px solid white; /* Estilo de borde deseado */
-}

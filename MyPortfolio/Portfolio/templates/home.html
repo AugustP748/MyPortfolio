@@ -3,7 +3,7 @@
 {% block title %}My Portflio{% endblock %}
 {% block content %}
     <section id="section-home">
-        <div class="card card-body rounded-5 animate__animated animate__zoomIn" style="">
+        <div class="card card-profile card-body rounded-5 animate__animated animate__zoomIn" style="">
             <div class="row">
                 <div class="col-md-3">
                     <img style="width: 250px; height: auto; border-radius: 50%;" src="{% static 'portfolio/profile.JPEG' %}" alt="profile">
@@ -22,17 +22,20 @@
                     <a href="https://www.linkedin.com/in/augusto-p-698947159/" class="btn btn-primary btn-circle btn-lg my-3" target="_blank">
                         <i class="fa-brands fa-linkedin fa-2xl"></i> 
                     </a> 
-                    <a href="https://github.com/AugustP748" class="btn btn-light btn-circle btn-lg my-3" target="_blank">
+                    <a href="https://github.com/AugustP748" class="btn btn-light btn-circle btn-lg btn-git my-3" target="_blank">
                         <i class="fa-brands fa-github fa-2xl" style="color: #212731;"></i>
+                    </a>
+                    <a href="{% static 'portfolio/CV_PA.pdf' %}" class="btn btn-success btn-circle btn-lg my-3" target="_blank">
+                        <i class="fa-solid fa-file-arrow-down fa-2xl"></i> CV
                     </a>
                 </div>
             </div>
         </div>
     </section>
     
-    <section id="section-projects" class="row my-4 text-center justify-content-center">
+    <section id="section-projects" class="row my-4 text-center justify-content-center" data-aos="zoom-in">
 
-        <div data-aos="zoom-in-down">
+        <div>
             <h3>My Projects</h3>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, eligendi.</p>
         </div>
@@ -41,7 +44,7 @@
             {% for project in projects %}
                 {% if project.visible %}
                     <div class="col-md-4 p-4">
-                        <div class="card card-project" data-aos="zoom-in">
+                        <div class="card card-project">
                             <img class="img-fluid card-img-top" src="{{project.image.url}}" 
                             alt="{{project.title}}" style="width: auto; height: 200px;">
                             <div class="card-body">
@@ -64,10 +67,27 @@
 
     <section id="section-habilidades" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
         <div class="card text-center rounded-5">
-            
             <div class="card-body">
               <h3 class="card-title"><i class="fa-solid fa-screwdriver-wrench fa-lg"></i> Habilidades</h3>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <div class=" row justify-content-center">
+                    <div class="col-md-4 p-4">
+                        <div class="container-skill">
+                            <h5 class="py-2 m-0">FullStack</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 p-4">
+                        <div class="container-skill">
+                            <h5 class="py-2 m-0">Statistical Analysis</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 p-4">
+                        <div class="container-skill">
+                            <h5 class="py-2 m-0">User Interface Design</h5>
+                        </div>
+                    </div>
+                </div>
             </div>
           </div>
     </section>
@@ -79,7 +99,7 @@
             {% if technologies %}
                 {% for tech in technologies %}
                     <div class="col-md-4 p-4">
-                        <div class="card">
+                        <div class="card card-tech">
                             <h5 class="card-title py-2 m-0">{{tech.name_Tech}}</h5>
                         </div>
                     </div>
@@ -88,4 +108,103 @@
                 <h5 class="card-title">There's any technology here, back soon!</h5>
             {% endif %}
     </section>
+
+    <section id="section-experience" class="row my-4 text-center justify-content-center" data-aos="fade-up">
+        <h3><i class="fa-solid fa-briefcase fa-lg"></i> Experiencia</h3>
+        
+        <div class="card mb-3 card-experience" style="max-width: 700px;">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="container text-center mb-4 mb-lg-0 m-4 p-2">
+                    <p class="text-primary fw-bolder mb-2 m-2">2019-Present</p>
+                    <p class="small fw-bolder m-0">Web Developer</p>
+                    <p class="small text-muted m-0">Company</p>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <!--<h5 class="card-title">Card title</h5>-->
+                  <p class="card-text m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Delectus laudantium, voluptatem quis repellendus eaque sit animi illo ipsam 
+                    amet officiis corporis sed aliquam non voluptate corrupti excepturi maxime 
+                    porro fuga.</p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card mb-3 card-experience" style="max-width: 700px;">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="container text-center mb-4 mb-lg-0 m-4 p-2">
+                    <p class="text-primary fw-bolder mb-2 m-2">2017-2019</p>
+                    <p class="small fw-bolder m-0">Web Developer</p>
+                    <p class="small text-muted m-0">Company</p>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <!--<h5 class="card-title">Card title</h5>-->
+                  <p class="card-text m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Delectus laudantium, voluptatem quis repellendus eaque sit animi illo ipsam 
+                    amet officiis corporis sed aliquam non voluptate corrupti excepturi maxime 
+                    porro fuga.</p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+
+
+    <section id="section-education" class="row my-4 text-center justify-content-center" data-aos="fade-up">
+        <h3><i class="fa-solid fa-school fa-lg"></i> Educaci&oacuten</h3>
+        
+        <div class="card mb-3 card-experience" style="max-width: 700px;">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="container text-center mb-4 mb-lg-0 m-4 p-2">
+                    <p class="text-info fw-bolder mb-2 m-2">2019-Present</p>
+                    <p class="small fw-bolder m-0">Web Developer</p>
+                    <p class="small text-muted m-0">Company</p>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <!--<h5 class="card-title">Card title</h5>-->
+                  <p class="card-text m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Delectus laudantium, voluptatem quis repellendus eaque sit animi illo ipsam 
+                    amet officiis corporis sed aliquam non voluptate corrupti excepturi maxime 
+                    porro fuga.</p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card mb-3 card-experience" style="max-width: 700px;">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="container text-center mb-4 mb-lg-0 m-4 p-2">
+                    <p class="text-info fw-bolder mb-2 m-2">2017-2019</p>
+                    <p class="small fw-bolder m-0">Web Developer</p>
+                    <p class="small text-muted m-0">Company</p>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <!--<h5 class="card-title">Card title</h5>-->
+                  <p class="card-text m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Delectus laudantium, voluptatem quis repellendus eaque sit animi illo ipsam 
+                    amet officiis corporis sed aliquam non voluptate corrupti excepturi maxime 
+                    porro fuga.</p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+
+
 {% endblock %}
