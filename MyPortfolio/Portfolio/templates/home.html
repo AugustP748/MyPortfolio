@@ -2,35 +2,42 @@
 {% load static %}
 {% block title %}My Portflio{% endblock %}
 {% block content %}
-    <section id="section-home mb-4">
-        <div class="card card-profile card-body rounded-5 animate__animated animate__zoomIn" style="">
-            <div class="row">
-                <div class="col-md-3">
-                    <img style="width: 250px; height: auto; border-radius: 50%;" src="{% static 'portfolio/profile.JPEG' %}" alt="profile">
-                </div>
-                <div class="col-md-9 my-auto">
+    <section id="section-home mb-4" class="row justify-content-center mb-4">
 
-                    <h1>I am <strong>Paz, Augusto Cesar</strong></h1>
-                    <h3>I am a Python FullStack Developer</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                        Ipsa ratione assumenda nobis. Accusamus incidunt nemo obcaecati natus!
-                        Magni animi, aliquid veritatis minima sed numquam impedit distinctio consequatur 
-                        aliquam quod quasi!00</p>
-                    <!-- <a href="{% static 'portfolio/CV_PA.pdf' %}" class="btn btn-primary btn-lg rounded-3 my-3" target="_blank">
-                        <i class="fa-thin fa-file-user"></i> Descargar CV
-                    </a> -->
-                    <a href="https://www.linkedin.com/in/augusto-p-698947159/" class="btn btn-primary btn-circle btn-lg my-3" target="_blank">
-                        <i class="fa-brands fa-linkedin fa-2xl"></i> 
-                    </a> 
-                    <a href="https://github.com/AugustP748" class="btn btn-light btn-circle btn-lg btn-git my-3" target="_blank">
-                        <i class="fa-brands fa-github fa-2xl" style="color: #212731;"></i>
-                    </a>
-                    <a href="{% static 'portfolio/CV_PA.pdf' %}" class="btn btn-success btn-circle btn-lg my-3" target="_blank">
-                        <i class="fa-solid fa-file-arrow-down fa-2xl"></i> CV
-                    </a>
+        <div class="card p-0" style="max-width: 900px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{% static 'portfolio/profile.JPEG' %}" class="img-fluid rounded-start" alt="profile" >
+
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h1>I am <strong>Paz, Augusto Cesar</strong></h1>
+                        <h3>I am a Python FullStack Developer</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                            Ipsa ratione assumenda nobis. Accusamus incidunt nemo obcaecati natus!
+                            Magni animi, aliquid veritatis minima sed numquam impedit distinctio consequatur 
+                            aliquam quod quasi!00</p>
+                        <!-- <a href="{% static 'portfolio/CV_PA.pdf' %}" class="btn btn-primary btn-lg rounded-3 my-3" target="_blank">
+                            <i class="fa-thin fa-file-user"></i> Descargar CV
+                        </a> -->
+                        <a href="https://www.linkedin.com/in/augusto-p-698947159/" class="btn btn-primary btn-circle btn-lg my-3" target="_blank">
+                            <i class="fa-brands fa-linkedin fa-2xl"></i> 
+                        </a> 
+                        <a href="https://github.com/AugustP748" class="btn btn-light btn-circle btn-lg btn-git my-3" target="_blank">
+                            <i class="fa-brands fa-github fa-2xl" style="color: #212731;"></i>
+                        </a>
+                        <a href="{% static 'portfolio/CV_PA.pdf' %}" class="btn btn-success btn-circle btn-lg my-3" target="_blank">
+                            <i class="fa-solid fa-file-arrow-down fa-2xl"></i> CV
+                        </a>
+                        
+                        
+                    </div>
                 </div>
             </div>
         </div>
+
+
     </section>
     
     <section id="section-projects" class="row my-4 text-center justify-content-center" data-aos="zoom-in">
@@ -47,7 +54,7 @@
                         <div class="card card-project element-transition">
                             <img class="img-fluid card-img-top" src="{{project.image.url}}" 
                             alt="{{project.title}}" style="width: auto; height: 200px;">
-                            <div class="card-body">
+                            <div class="card-body card-size-body ">
                                 <h5 class="card-title">{{project.title}}</h5>
                                 <p class="card-text">{{project.description|striptags|truncatechars:70}}</p>
                                 {% if project.url %}
@@ -128,7 +135,7 @@
                 </div>
               </div>
               <div class="col-md-8">
-                <div class="card-body">
+                <div class="card-body card-size-body ">
                   <!--<h5 class="card-title">Card title</h5>-->
                   <p class="card-text m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Delectus laudantium, voluptatem quis repellendus eaque sit animi illo ipsam 
@@ -150,7 +157,7 @@
                 </div>
               </div>
               <div class="col-md-8">
-                <div class="card-body">
+                <div class="card-body card-size-body ">
                   <!--<h5 class="card-title">Card title</h5>-->
                   <p class="card-text m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Delectus laudantium, voluptatem quis repellendus eaque sit animi illo ipsam 
@@ -177,7 +184,7 @@
                 </div>
               </div>
               <div class="col-md-8">
-                <div class="card-body">
+                <div class="card-body card-size-body ">
                   <!--<h5 class="card-title">Card title</h5>-->
                   <p class="card-text m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Delectus laudantium, voluptatem quis repellendus eaque sit animi illo ipsam 
@@ -199,7 +206,7 @@
                 </div>
               </div>
               <div class="col-md-8">
-                <div class="card-body">
+                <div class="card-body card-size-body ">
                   <!--<h5 class="card-title">Card title</h5>-->
                   <p class="card-text m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Delectus laudantium, voluptatem quis repellendus eaque sit animi illo ipsam 

@@ -49,7 +49,7 @@ body.dark .card {
   width: auto;
 }
 
-.card-body {
+.card-size-body {
   /* SE ENCUENTRA EN CARD PROFILE, CARD PROJECT, CARD EXPER Y EDUC*/
   height: 180px;
   width: auto;
