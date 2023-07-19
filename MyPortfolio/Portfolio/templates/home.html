@@ -2,7 +2,7 @@
 {% load static %}
 {% block title %}My Portflio{% endblock %}
 {% block content %}
-    <section id="section-home">
+    <section id="section-home mb-4">
         <div class="card card-profile card-body rounded-5 animate__animated animate__zoomIn" style="">
             <div class="row">
                 <div class="col-md-3">
@@ -36,15 +36,15 @@
     <section id="section-projects" class="row my-4 text-center justify-content-center" data-aos="zoom-in">
 
         <div>
-            <h3>My Projects</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, eligendi.</p>
+            <h3>Mis Proyectos</h3>
+            <p>Los proyectos más destacados en los que colaboré y creé son los siguientes</p>
         </div>
 
         {% if projects and Are_All_Not_Visible == False %}
             {% for project in projects %}
                 {% if project.visible %}
                     <div class="col-md-4 p-4">
-                        <div class="card card-project">
+                        <div class="card card-project element-transition">
                             <img class="img-fluid card-img-top" src="{{project.image.url}}" 
                             alt="{{project.title}}" style="width: auto; height: 200px;">
                             <div class="card-body">
@@ -66,53 +66,59 @@
     </section>
 
     <section id="section-habilidades" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-        <div class="card text-center rounded-5">
-            <div class="card-body">
+        <div class="card text-center rounded-5 p-4">
+            
               <h3 class="card-title"><i class="fa-solid fa-screwdriver-wrench fa-lg"></i> Habilidades</h3>
                 <div class=" row justify-content-center">
                     <div class="col-md-4 p-4">
-                        <div class="container-skill">
+                        <div class="container-skill-lang element-transition">
                             <h5 class="py-2 m-0">FullStack</h5>
                         </div>
                     </div>
 
                     <div class="col-md-4 p-4">
-                        <div class="container-skill">
+                        <div class="container-skill-lang element-transition">
                             <h5 class="py-2 m-0">Statistical Analysis</h5>
                         </div>
                     </div>
 
                     <div class="col-md-4 p-4">
-                        <div class="container-skill">
+                        <div class="container-skill-lang element-transition">
                             <h5 class="py-2 m-0">User Interface Design</h5>
                         </div>
                     </div>
                 </div>
-            </div>
+           
           </div>
     </section>
 
-    <section id="section-tech" class="row my-4 text-center justify-content-center" data-aos="fade-up">
-        
-            <h3><i class="fa-solid fa-code fa-lg"></i> Lenguajes de Programación</h3>
-    
-            {% if technologies %}
-                {% for tech in technologies %}
-                    <div class="col-md-4 p-4">
-                        <div class="card card-tech">
-                            <h5 class="card-title py-2 m-0">{{tech.name_Tech}}</h5>
-                        </div>
-                    </div>
-                {% endfor %}
-            {% else %}
-                <h5 class="card-title">There's any technology here, back soon!</h5>
-            {% endif %}
+    <section id="section-tech" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" class="my-4">
+        <div class="card text-center rounded-5 p-4">
+            
+                <h3><i class="fa-solid fa-code fa-lg"></i> Lenguajes de Programación</h3>
+                <div class=" row justify-content-center">
+                    {% if technologies %}
+                        {% for tech in technologies %}
+                            <div class="col-md-4 p-4">
+                                <div class="container-skill-lang element-transition">
+                                    <h5 class="card-title py-2 m-0">{{tech.name_Tech}}</h5>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <h5 class="card-title">There's any technology here, back soon!</h5>
+                    {% endif %}
+                </div>
+            
+          </div>
     </section>
+
+
 
     <section id="section-experience" class="row my-4 text-center justify-content-center" data-aos="fade-up">
         <h3><i class="fa-solid fa-briefcase fa-lg"></i> Experiencia</h3>
         
-        <div class="card mb-3 card-experience" style="max-width: 700px;">
+        <div class="card mb-3 card-exp-educ" style="max-width: 700px;">
             <div class="row">
               <div class="col-md-4">
                 <div class="container text-center mb-4 mb-lg-0 m-4 p-2">
@@ -134,7 +140,7 @@
             </div>
           </div>
           
-          <div class="card mb-3 card-experience" style="max-width: 700px;">
+          <div class="card mb-3 card-exp-educ" style="max-width: 700px;">
             <div class="row">
               <div class="col-md-4">
                 <div class="container text-center mb-4 mb-lg-0 m-4 p-2">
@@ -161,7 +167,7 @@
     <section id="section-education" class="row my-4 text-center justify-content-center" data-aos="fade-up">
         <h3><i class="fa-solid fa-school fa-lg"></i> Educaci&oacuten</h3>
         
-        <div class="card mb-3 card-experience" style="max-width: 700px;">
+        <div class="card mb-3 card-exp-educ" style="max-width: 700px;">
             <div class="row">
               <div class="col-md-4">
                 <div class="container text-center mb-4 mb-lg-0 m-4 p-2">
@@ -183,7 +189,7 @@
             </div>
           </div>
           
-          <div class="card mb-3 card-experience" style="max-width: 700px;">
+          <div class="card mb-3 card-exp-educ" style="max-width: 700px;">
             <div class="row">
               <div class="col-md-4">
                 <div class="container text-center mb-4 mb-lg-0 m-4 p-2">
@@ -206,5 +212,34 @@
           </div>
     </section>
 
+
+    <section id="section-contact" class="row my-4 text-center justify-content-center" data-aos="flip-right">
+        
+        <div class="card rounded-5 p-4" style="width: 700px;">
+            <h3><i class="fa-regular fa-envelope fa-lg"></i> Cont&aacutectame</h3>
+            <form action="">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="nameInput" placeholder="Nombre Completo" required>
+                    <label for="nameInput">Nombre completo</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" required>
+                    <label for="emailInput">Correo electr&oacutenico</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="phone" class="form-control" id="telInput" placeholder="3811234567" required>
+                    <label for="telInput">Tel&eacutefono</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <textarea class="form-control" placeholder="Mensaje" id="MensajeTextarea" style="height: 100px" required></textarea>
+                    <label for="MensajeTextarea">Mensaje</label>
+                  </div>
+                  
+                  <a type="submit" class="btn btn-primary w-100">Enviar</a>
+            </form>
+        </div>
+        
+          
+    </section>
 
 {% endblock %}

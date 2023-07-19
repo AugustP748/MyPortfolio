@@ -1,6 +1,8 @@
 :root{
   --greyDarkTheme: #1c1c1e;
   --grayLightTheme: #f2f1f7e0;
+  --border-nav-footer: 3px solid black;
+  --card-shadow:10px 10px 20px rgba(170, 170, 170, 0.16);
 }
 
 
@@ -31,11 +33,9 @@ body.dark main {
 
 /* CARDS */ 
 .card {
-  /* Estilos para las cards en modo claro */
   background-color: white;
-  border: 2px solid gray; /* Estilo de borde deseado */
-  /*border-radius: 5px;*/ /* Opcional: añade esquinas redondeadas al borde */
-  box-shadow: 10px 10px 20px rgba(170, 170, 170, 0.16);
+  border-color: gray;
+  box-shadow: var(--card-shadow);
 }
 
 body.dark .card {
@@ -44,75 +44,69 @@ body.dark .card {
 }
 
 .card-text {
+  /* SE ENCUENTRA EN CARD PROJECT, CARD EXPER Y EDUC*/
   height: 50px;
   width: auto;
 }
 
 .card-body {
+  /* SE ENCUENTRA EN CARD PROFILE, CARD PROJECT, CARD EXPER Y EDUC*/
   height: 180px;
   width: auto;
 }
 
 /* CARDS PROFILE */ 
 .card-profile .btn-git{
-  border: 1px solid;
+  border: 1px solid lightgray;
 }
 
 /* CARDS PROJECT */ 
-
 .card-project{
   cursor:pointer;
-  transition: all 0.3s;
-  
+  border: 2px solid;
 }
 
-.card-project img {
-  /* Actualmente sin funcionar*/
-  height: auto;
-  width: 200px;
-}
-
-.card-project:hover {
-  transform: scale(1.07);
-}
-
-/* CARDS EXPERIENCE */ 
-.card-experience .card-body{
+/* CARDS EXPERIENCE & EDUCATION */ 
+.card-exp-educ .card-body{
   text-align: left;
 }
 
-.card-experience .container{
+.card-exp-educ .container{
   background-color: var(--grayLightTheme);
   border-radius: 20px;
 }
 
-/*
-body.dark .card p, body.dark .card h5 {
-  color: white;
-}*/
+body.dark .card-exp-educ .container{
+  background-color: black;
+}
 
-/*
-body.dark .card:hover {
-  border-color: white;
-}*/
+/* ELEMENT-TRANSITION*/
+.element-transition{
+  transition: all 0.2s;
+} 
+
+.element-transition:hover{
+  transform: scale(1.07);
+}
 
 /* CONTAINER SKILL  */ 
-.container-skill{
-  background-color: white;
+.container-skill-lang{
   border: 2px solid gray;
   border-radius: 20px;
-  transition: all 0.3s;
 }
 
-.container-skill:hover{
-  transform: scale(1.07);
-
+body.dark .container-skill-lang{
+  background-color: var(--greyDarkTheme);
+  color:white;
+  border-color: white;
 }
+
+/* CONTAINER-CONTACT */
 
 
 /* NAVBAR */ 
 .navbar {
-  border-bottom: 3px solid black; /* Estilo de borde deseado */
+  border-bottom: var(--border-nav-footer); /* Estilo de borde deseado */
   border-radius: 0 0 5px 5px; /* Opcional: añade esquinas redondeadas al borde */
   background-color: white;
 }
@@ -132,7 +126,7 @@ body.dark .navbar a:hover {
 /* FOOTER */ 
 .footer {
   background-color: white;
-  border-top: 3px solid black; /* Estilo de borde deseado */
+  border-top: var(--border-nav-footer);
   box-shadow: var(--greyDarkTheme);
 }
 
