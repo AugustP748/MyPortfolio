@@ -50,7 +50,7 @@ body.dark .card {
 }
 
 .card-size-body {
-  /* SE ENCUENTRA EN CARD PROFILE, CARD PROJECT, CARD EXPER Y EDUC*/
+  /* SE ENCUENTRA EN CARD PROJECT, CARD EXPER Y EDUC*/
   height: 180px;
   width: auto;
 }

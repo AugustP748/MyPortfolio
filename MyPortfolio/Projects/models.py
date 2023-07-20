@@ -15,9 +15,10 @@ class Technologie(models.Model):
 
 class Project(models.Model):
     title = models.CharField(max_length=100)
-    description = models.TextField(max_length=250)
+    description = models.TextField()
     image = models.ImageField(upload_to='portfolio/images/',default='por_defecto/no_imagen.jpg')
     url = models.URLField(blank=True)
+    learned = models.TextField(blank=True)
     technologies = models.ManyToManyField(Technologie)
     visible=models.BooleanField(default=True)
     created=models.DateTimeField(auto_now_add=True)

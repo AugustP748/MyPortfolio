@@ -4,15 +4,15 @@
 {% block content %}
     <section id="section-home mb-4" class="row justify-content-center mb-4">
 
-        <div class="card p-0" style="max-width: 900px;">
+        <div class="card card-profile p-0 animate__animated animate__zoomIn" style="max-width: 900px;">
             <div class="row g-0">
                 <div class="col-md-4">
                     <img src="{% static 'portfolio/profile.JPEG' %}" class="img-fluid rounded-start" alt="profile" >
 
                 </div>
                 <div class="col-md-8">
-                    <div class="card-body">
-                        <h1>I am <strong>Paz, Augusto Cesar</strong></h1>
+                    <div class="card-body h-100 d-flex flex-column">
+                        <h1 class="card-title">I am <strong>Paz, Augusto Cesar</strong></h1>
                         <h3>I am a Python FullStack Developer</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
                             Ipsa ratione assumenda nobis. Accusamus incidunt nemo obcaecati natus!
@@ -21,16 +21,17 @@
                         <!-- <a href="{% static 'portfolio/CV_PA.pdf' %}" class="btn btn-primary btn-lg rounded-3 my-3" target="_blank">
                             <i class="fa-thin fa-file-user"></i> Descargar CV
                         </a> -->
-                        <a href="https://www.linkedin.com/in/augusto-p-698947159/" class="btn btn-primary btn-circle btn-lg my-3" target="_blank">
-                            <i class="fa-brands fa-linkedin fa-2xl"></i> 
-                        </a> 
-                        <a href="https://github.com/AugustP748" class="btn btn-light btn-circle btn-lg btn-git my-3" target="_blank">
-                            <i class="fa-brands fa-github fa-2xl" style="color: #212731;"></i>
-                        </a>
-                        <a href="{% static 'portfolio/CV_PA.pdf' %}" class="btn btn-success btn-circle btn-lg my-3" target="_blank">
-                            <i class="fa-solid fa-file-arrow-down fa-2xl"></i> CV
-                        </a>
-                        
+                        <div class="mt-auto">
+                            <a href="https://www.linkedin.com/in/augusto-p-698947159/" class="btn btn-primary btn-circle btn-lg my-3" target="_blank"
+                            title="LinkedIn"><i class="fa-brands fa-linkedin fa-2xl"></i> 
+                            </a> 
+                            <a href="https://github.com/AugustP748" class="btn btn-light btn-circle btn-lg btn-git my-3" target="_blank"
+                            title="GitHub"><i class="fa-brands fa-github fa-2xl" style="color: #212731;"></i>
+                            </a>
+                            <a href="{% static 'portfolio/CV_PA.pdf' %}" class="btn btn-success btn-circle btn-lg my-3" target="_blank"
+                            Title="Descargar Curriculum Vitae"><i class="fa-solid fa-file-arrow-down fa-2xl"></i> CV
+                            </a>
+                        </div>
                         
                     </div>
                 </div>
@@ -54,6 +55,10 @@
                         <div class="card card-project element-transition">
                             <img class="img-fluid card-img-top" src="{{project.image.url}}" 
                             alt="{{project.title}}" style="width: auto; height: 200px;">
+                            <div class="container-badge">
+                                <!-- <span class="badge rounded-pill bg-success" >New</span>
+                                <span class="badge rounded-pill bg-success">New</span> -->
+                            </div>  
                             <div class="card-body card-size-body ">
                                 <h5 class="card-title">{{project.title}}</h5>
                                 <p class="card-text">{{project.description|striptags|truncatechars:70}}</p>
@@ -242,7 +247,7 @@
                     <label for="MensajeTextarea">Mensaje</label>
                   </div>
                   
-                  <a type="submit" class="btn btn-primary w-100">Enviar</a>
+                  <a type="submit" class="btn btn-primary w-100">Enviar <i class="fa-regular fa-paper-plane"></i> </a>
             </form>
         </div>
         
