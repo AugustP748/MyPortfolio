@@ -53,12 +53,11 @@
                 {% if project.visible %}
                     <div class="col-md-4 p-4">
                         <div class="card card-project element-transition">
-                            <img class="img-fluid card-img-top" src="{{project.image.url}}" 
-                            alt="{{project.title}}" style="width: auto; height: 200px;">
-                            <div class="container-badge">
-                                <!-- <span class="badge rounded-pill bg-success" >New</span>
-                                <span class="badge rounded-pill bg-success">New</span> -->
-                            </div>  
+                            <div class="image-container">
+                                <img class="img-fluid card-img-top" src="{{project.image.url}}" 
+                                alt="{{project.title}}" style="width: auto; height: 200px;">
+                                
+                            </div> 
                             <div class="card-body card-size-body ">
                                 <h5 class="card-title">{{project.title}}</h5>
                                 <p class="card-text">{{project.description|striptags|truncatechars:70}}</p>
@@ -229,21 +228,22 @@
         
         <div class="card rounded-5 p-4" style="width: 700px;">
             <h3><i class="fa-regular fa-envelope fa-lg"></i> Cont&aacutectame</h3>
-            <form action="">
+            <form action="" method="post">
+              {% csrf_token %}
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="nameInput" placeholder="Nombre Completo" required>
+                    <input type="text" class="form-control" id="nameInput" name="nameInput" placeholder="Nombre Completo" required>
                     <label for="nameInput">Nombre completo</label>
                   </div>
                   <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" required>
+                    <input type="email" class="form-control" id="emailInput" name="emailInput" placeholder="name@example.com" required>
                     <label for="emailInput">Correo electr&oacutenico</label>
                   </div>
                   <div class="form-floating mb-3">
-                    <input type="phone" class="form-control" id="telInput" placeholder="3811234567" required>
+                    <input type="phone" class="form-control" id="telInput" name="telInput" placeholder="3811234567" required>
                     <label for="telInput">Tel&eacutefono</label>
                   </div>
                   <div class="form-floating mb-3">
-                    <textarea class="form-control" placeholder="Mensaje" id="MensajeTextarea" style="height: 100px" required></textarea>
+                    <textarea class="form-control" placeholder="Mensaje" id="MensajeTextarea" name="MensajeTextarea" style="height: 100px" required></textarea>
                     <label for="MensajeTextarea">Mensaje</label>
                   </div>
                   

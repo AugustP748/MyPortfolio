@@ -8,6 +8,14 @@ class PictureProfile(models.Model):
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now=True)
 
+class Language():
+    language_name=models.CharField(max_length=50)
+    created=models.DateTimeField(auto_now_add=True)
+    updated=models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        verbose_name="Language"
+        verbose_name_plural="Languages"
     
 class Profile(models.Model):
     first_name = models.CharField(max_length=30)
@@ -24,6 +32,7 @@ class Profile(models.Model):
     mission=models.TextField()
     vision = models.TextField()
     call_to_action = models.TextField()
+    Languages = models.ManyToManyField(Language)
     images = models.ForeignKey(PictureProfile)
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now=True)
@@ -32,15 +41,7 @@ class Profile(models.Model):
         verbose_name="Profile"
         verbose_name_plural="Profiles"
        
-class Language():
-    language_name=models.CharField(max_length=50)
-    profile=models.ForeignKey(Profile)
-    created=models.DateTimeField(auto_now_add=True)
-    updated=models.DateTimeField(auto_now=True)
-    
-    class Meta:
-        verbose_name="Language"
-        verbose_name_plural="Languages"
+
     
 class TypeCharacteristic(models.Model):
     type_charact_name=models.CharField()
@@ -54,7 +55,7 @@ class TypeCharacteristic(models.Model):
         verbose_name_plural="Types characteristics"
         
 class Characteristic(models.Model):
-    skill_name=models.CharField(max_length=75)
+    Charact_name=models.CharField(max_length=75)
     description=models.TextField()
     profile=models.ForeignKey(Profile)
     type_charact=models.ForeignKey(TypeCharacteristic)
@@ -70,7 +71,7 @@ class Characteristic(models.Model):
 class Education(models.Model):
     institute=models.CharField(max_length=100)
     start_date=models.DateTimeField()
-    end_date=models.DateTimeField()
+    end_date=models.DateTimeField(blank=True, null=True)
     description=models.TextField()
     image=models.ImageField(upload_to='profile/images/education/')
     icon=models.ImageField(upload_to='profile/images/education/icons')
@@ -95,3 +96,30 @@ class course(models.Model):
     class Meta:
         verbose_name="course"
         verbose_name_plural="courses"
+        
+class Role(models.Model):
+    role_name=models.CharField(max_length=30)
+    visible=models.BooleanField(default=True)
+    created=models.DateTimeField(auto_now_add=True)
+    updated=models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        verbose_name="Role"
+        verbose_name_plural="Roles"
+    
+class Experience(models.Model):
+    company=models.CharField(max_length=100)
+    role=models.ForeignKey(Role)
+    start_date=models.DateTimeField()
+    end_date=models.DateTimeField(blank=True, null=True)
+    description=models.TextField()
+    image=models.ImageField(upload_to='profile/images/education/')
+    icon=models.ImageField(upload_to='profile/images/education/icons')
+    profile=models.ForeignKey(Profile)
+    visible=models.BooleanField(default=True)
+    created=models.DateTimeField(auto_now_add=True)
+    updated=models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        verbose_name="Education"
+        verbose_name_plural="Educations"

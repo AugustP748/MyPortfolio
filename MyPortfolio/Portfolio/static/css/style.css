@@ -8,13 +8,13 @@
 
 main{
   background-color: var(--grayLightTheme);
+  transition: 0.3s ease all;
 }
 
 body {
   display: grid;
   min-height: 100vh;
   grid-template-rows: auto 1fr auto;
-  transition: 0.3s ease all;
   
 }
 
@@ -64,6 +64,24 @@ body.dark .card {
 .card-project{
   cursor:pointer;
   border: 2px solid;
+}
+
+.card-project .container-badge {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.card-project .image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-project .image-container:hover .container-badge {
+  display: block;
 }
 
 /* CARDS EXPERIENCE & EDUCATION */ 
@@ -138,4 +156,6 @@ body.dark .footer {
   background: var(--greyDarkTheme);
   border-color: white;
 }
+
+
 
