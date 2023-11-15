@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'Portfolio.apps.PortfolioConfig',
     'Projects.apps.ProjectsConfig',
     'Contact.apps.ContactConfig',
+    'Profile.apps.ProfileConfig',
 ]
 
 MIDDLEWARE = [

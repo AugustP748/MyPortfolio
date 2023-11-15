@@ -8,7 +8,7 @@ class PictureProfile(models.Model):
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now=True)
 
-class Language():
+class Language(models.Model):
     language_name=models.CharField(max_length=50)
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now=True)
@@ -32,8 +32,6 @@ class Profile(models.Model):
     mission=models.TextField()
     vision = models.TextField()
     call_to_action = models.TextField()
-    Languages = models.ManyToManyField(Language)
-    images = models.ForeignKey(PictureProfile)
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now=True)
     
@@ -42,30 +40,17 @@ class Profile(models.Model):
         verbose_name_plural="Profiles"
        
 
-    
-class TypeCharacteristic(models.Model):
-    type_charact_name=models.CharField()
-    visible=models.BooleanField(default=True)
-    description=models.TextField()
-    created=models.DateTimeField(auto_now_add=True)
-    updated=models.DateTimeField(auto_now=True)
-    
-    class Meta:
-        verbose_name="Type characteristic"
-        verbose_name_plural="Types characteristics"
         
-class Characteristic(models.Model):
-    Charact_name=models.CharField(max_length=75)
+class Skill(models.Model):
+    Skill_name=models.CharField(max_length=75)
     description=models.TextField()
-    profile=models.ForeignKey(Profile)
-    type_charact=models.ForeignKey(TypeCharacteristic)
     visible=models.BooleanField(default=True)
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now=True)
     
     class Meta:
-        verbose_name="Characteristic"
-        verbose_name_plural="Characteristics"
+        verbose_name="Skill"
+        verbose_name_plural="Skills"
 
     
 class Education(models.Model):
@@ -73,9 +58,6 @@ class Education(models.Model):
     start_date=models.DateTimeField()
     end_date=models.DateTimeField(blank=True, null=True)
     description=models.TextField()
-    image=models.ImageField(upload_to='profile/images/education/')
-    icon=models.ImageField(upload_to='profile/images/education/icons')
-    profile=models.ForeignKey(Profile)
     visible=models.BooleanField(default=True)
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now=True)
@@ -86,9 +68,8 @@ class Education(models.Model):
         
 class course(models.Model):
     title=models.CharField(max_length=120)
-    certificate=models.FileField(upload_to='profile/files/education')
+    certificate=models.FileField(upload_to='profile/files/education',blank=True, null=True)
     description=models.TextField()
-    education=models.ForeignKey(Education)
     visible=models.BooleanField(default=True)
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now=True)
@@ -109,13 +90,10 @@ class Role(models.Model):
     
 class Experience(models.Model):
     company=models.CharField(max_length=100)
-    role=models.ForeignKey(Role)
+    role=models.ForeignKey(Role,on_delete=models.CASCADE)
     start_date=models.DateTimeField()
     end_date=models.DateTimeField(blank=True, null=True)
     description=models.TextField()
-    image=models.ImageField(upload_to='profile/images/education/')
-    icon=models.ImageField(upload_to='profile/images/education/icons')
-    profile=models.ForeignKey(Profile)
     visible=models.BooleanField(default=True)
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now=True)
