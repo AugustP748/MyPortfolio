@@ -12,11 +12,11 @@
                 </div>
                 <div class="col-md-8">
                   {% if profiles %}
-                    {% for pro in profiles %}
+                    
                       <div class="card-body h-100 d-flex flex-column">
-                          <h1 class="card-title"><strong>{{pro.last_name}}, {{pro.first_name}}</strong></h1>
-                          <h3>{{pro.subtitle}}</h3>
-                          <p>{{pro.description}}</p>
+                          <h1 class="card-title"><strong>{{profiles.last_name}}, {{profiles.first_name}}</strong></h1>
+                          <h3>{{profiles.subtitle}}</h3>
+                          <p>{{profiles.description}}</p>
                           <!-- <a href="{% static 'portfolio/CV_PA.pdf' %}" class="btn btn-primary btn-lg rounded-3 my-3" target="_blank">
                               <i class="fa-thin fa-file-user"></i> Descargar CV
                           </a> -->
@@ -27,13 +27,13 @@
                               <a href="https://github.com/AugustP748" class="btn btn-light btn-circle btn-lg btn-git my-3" target="_blank"
                               title="GitHub"><i class="fa-brands fa-github fa-2xl" style="color: #212731;"></i>
                               </a>
-                              <a href="{% static 'portfolio/CV_PA.pdf' %}" class="btn btn-success btn-circle btn-lg my-3" target="_blank"
+                              <a href="{% url 'portfolio:download-cv' %}" class="btn btn-success btn-circle btn-lg my-3" target="_blank"
                               Title="Descargar Curriculum Vitae"><i class="fa-solid fa-file-arrow-down fa-2xl"></i> CV
                               </a>
                           </div>
                           
                       </div>
-                    {% endfor %}
+                   
                   {% endif%}
                 </div>
             </div>
@@ -99,6 +99,7 @@
           </div>
     </section>
 
+<!-- #content
     <section id="section-tech" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" class="my-4">
         <div class="card text-center rounded-5 p-4">
             
@@ -118,10 +119,8 @@
                 </div>
             
           </div>
-    </section>
-
-
-
+    </section>  -->
+<!-- #content
     <section id="section-experience" class="row my-4 text-center justify-content-center" data-aos="fade-up">
         <h3><i class="fa-solid fa-briefcase fa-lg"></i> Experiencia</h3>
         
@@ -136,7 +135,7 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body card-size-body ">
-                  <!--<h5 class="card-title">Card title</h5>-->
+               
                   <p class="card-text m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Delectus laudantium, voluptatem quis repellendus eaque sit animi illo ipsam 
                     amet officiis corporis sed aliquam non voluptate corrupti excepturi maxime 
@@ -146,7 +145,7 @@
               </div>
             </div>
           </div>
-          
+        
           <div class="card mb-3 card-exp-educ" style="max-width: 700px;">
             <div class="row">
               <div class="col-md-4">
@@ -158,7 +157,7 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body card-size-body ">
-                  <!--<h5 class="card-title">Card title</h5>-->
+                
                   <p class="card-text m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Delectus laudantium, voluptatem quis repellendus eaque sit animi illo ipsam 
                     amet officiis corporis sed aliquam non voluptate corrupti excepturi maxime 
@@ -169,54 +168,41 @@
             </div>
           </div>
     </section>
-
+  -->
 
     <section id="section-education" class="row my-4 text-center justify-content-center" data-aos="fade-up">
         <h3><i class="fa-solid fa-school fa-lg"></i> Educaci&oacuten</h3>
         
-        <div class="card mb-3 card-exp-educ" style="max-width: 700px;">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="container text-center mb-4 mb-lg-0 m-4 p-2">
-                    <p class="text-info fw-bolder mb-2 m-2">2019-Present</p>
-                    <p class="small fw-bolder m-0">Web Developer</p>
-                    <p class="small text-muted m-0">Company</p>
+        {% if education %}
+          {% for educ in education %}
+            <div class="card mb-3 card-exp-educ" style="max-width: 700px;">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="container text-center mb-4 mb-lg-0 m-4 p-2">
+                    {% if educ.end_date is null %}
+                      <p class="text-info fw-bolder mb-2 m-2">{{educ.start_date|date:"Y/m"}} - Presente</p>
+                    {% else %}
+                      <p class="text-info fw-bolder mb-2 m-2">{{educ.start_date|date:"Y/m"}}-{{educ.end_date|date:"Y/m"}}</p>
+                    {% endif %}
+                      <p class="small fw-bolder m-0"><strong>{{educ.title}}</strong></p>
+                      <p class="small text-muted m-0">{{educ.institute}}</p>
+                  </div>
                 </div>
-              </div>
-              <div class="col-md-8">
-                <div class="card-body card-size-body ">
-                  <!--<h5 class="card-title">Card title</h5>-->
-                  <p class="card-text m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Delectus laudantium, voluptatem quis repellendus eaque sit animi illo ipsam 
-                    amet officiis corporis sed aliquam non voluptate corrupti excepturi maxime 
-                    porro fuga.</p>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="card mb-3 card-exp-educ" style="max-width: 700px;">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="container text-center mb-4 mb-lg-0 m-4 p-2">
-                    <p class="text-info fw-bolder mb-2 m-2">2017-2019</p>
-                    <p class="small fw-bolder m-0">Web Developer</p>
-                    <p class="small text-muted m-0">Company</p>
-                </div>
-              </div>
-              <div class="col-md-8">
-                <div class="card-body card-size-body ">
-                  <!--<h5 class="card-title">Card title</h5>-->
-                  <p class="card-text m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Delectus laudantium, voluptatem quis repellendus eaque sit animi illo ipsam 
-                    amet officiis corporis sed aliquam non voluptate corrupti excepturi maxime 
-                    porro fuga.</p>
-                  
+                <div class="col-md-8">
+                  <div class="card-body card-size-body ">
+                    <!--<h5 class="card-title">Card title</h5>-->
+                    <p class="card-text m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                      Delectus laudantium, voluptatem quis repellendus eaque sit animi illo ipsam 
+                      amet officiis corporis sed aliquam non voluptate corrupti excepturi maxime 
+                      porro fuga.</p>
+                    
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          {% endfor %}
+        {% endif %}
+   
     </section>
 
 

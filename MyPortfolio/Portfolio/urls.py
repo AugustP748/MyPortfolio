@@ -8,4 +8,5 @@ from . import views
 app_name='portfolio'
 urlpatterns = [
     path('', views.home,name="home"),
+    path('download-cv', views.descargar_archivo,name="download-cv"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

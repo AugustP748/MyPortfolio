@@ -22,7 +22,7 @@ class Profile(models.Model):
     last_name = models.CharField(max_length=30)
     main_image = models.ImageField(upload_to='profile/images/main_image/',default='por_defecto/no_user.jpg')
     curriculum = models.FileField(upload_to='profile/files/cv')
-    birth_date = models.DateTimeField()
+    birth_date = models.DateField()
     email = models.EmailField()
     phone = models.CharField(max_length=20)
     subtitle = models.TextField()
@@ -52,12 +52,16 @@ class Skill(models.Model):
         verbose_name="Skill"
         verbose_name_plural="Skills"
 
-    
+
+
 class Education(models.Model):
     institute=models.CharField(max_length=100)
-    start_date=models.DateTimeField()
-    end_date=models.DateTimeField(blank=True, null=True)
-    description=models.TextField()
+    title=models.CharField(max_length=50,blank=True, null=True)
+    start_date=models.DateField(blank=True, null=True)
+    end_date=models.DateField(blank=True, null=True)
+    description=models.TextField(blank=True, null=True)
+    certificate=models.FileField(upload_to='profile/files/education',blank=True, null=True)
+    course=models.BooleanField(default=True)
     visible=models.BooleanField(default=True)
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now=True)
@@ -66,17 +70,6 @@ class Education(models.Model):
         verbose_name="Education"
         verbose_name_plural="Educations"
         
-class course(models.Model):
-    title=models.CharField(max_length=120)
-    certificate=models.FileField(upload_to='profile/files/education',blank=True, null=True)
-    description=models.TextField()
-    visible=models.BooleanField(default=True)
-    created=models.DateTimeField(auto_now_add=True)
-    updated=models.DateTimeField(auto_now=True)
-    
-    class Meta:
-        verbose_name="course"
-        verbose_name_plural="courses"
         
 class Role(models.Model):
     role_name=models.CharField(max_length=30)
@@ -91,8 +84,8 @@ class Role(models.Model):
 class Experience(models.Model):
     company=models.CharField(max_length=100)
     role=models.ForeignKey(Role,on_delete=models.CASCADE)
-    start_date=models.DateTimeField()
-    end_date=models.DateTimeField(blank=True, null=True)
+    start_date=models.DateField(blank=True, null=True)
+    end_date=models.DateField(blank=True, null=True)
     description=models.TextField()
     visible=models.BooleanField(default=True)
     created=models.DateTimeField(auto_now_add=True)
