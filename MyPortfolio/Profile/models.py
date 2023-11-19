@@ -60,7 +60,7 @@ class Education(models.Model):
     start_date=models.DateField(blank=True, null=True)
     end_date=models.DateField(blank=True, null=True)
     description=models.TextField(blank=True, null=True)
-    certificate=models.FileField(upload_to='profile/files/education',blank=True, null=True)
+    imagenEduc=models.FileField(upload_to='profile/files/education',blank=True, null=True)
     course=models.BooleanField(default=True)
     visible=models.BooleanField(default=True)
     created=models.DateTimeField(auto_now_add=True)

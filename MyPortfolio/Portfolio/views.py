@@ -27,8 +27,8 @@ def home(request):
     context['Are_All_Not_Visible'] = not Project.objects.filter(~Q(visible=False)).exists()
     context['profiles'] = get_object_or_404(Profile, pk=1)
     context['skills'] = Skill.objects.all()
-    context['education'] = Education.objects.filter(course=False)
-    context['courses'] = Education.objects.filter(course=True)
+    context['education'] = Education.objects.filter(course=False,visible=True)
+    context['courses'] = Education.objects.filter(course=True,visible=True)
     return render(request,'home.html',context=context)
 
 

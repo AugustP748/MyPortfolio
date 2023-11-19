@@ -45,7 +45,7 @@
     <section id="section-projects" class="row my-4 text-center justify-content-center" data-aos="zoom-in">
 
         <div>
-            <h3>Mis Proyectos</h3>
+            <h3><i class="fa-solid fa-laptop-code"></i> Mis Proyectos</h3>
             <p>Los proyectos más destacados en los que colaboré y creé son los siguientes</p>
         </div>
 
@@ -93,33 +93,10 @@
                     {% endfor %}
                   {% endif %}
 
-                    
-                </div>
-           
+                </div>        
           </div>
     </section>
 
-<!-- #content
-    <section id="section-tech" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" class="my-4">
-        <div class="card text-center rounded-5 p-4">
-            
-                <h3><i class="fa-solid fa-code fa-lg"></i> Lenguajes de Programación</h3>
-                <div class=" row justify-content-center">
-                    {% if technologies %}
-                        {% for tech in technologies %}
-                            <div class="col-md-4 p-4">
-                                <div class="container-skill-lang element-transition">
-                                    <h5 class="card-title py-2 m-0">{{tech.name_Tech}}</h5>
-                                </div>
-                            </div>
-                        {% endfor %}
-                    {% else %}
-                        <h5 class="card-title">There's any technology here, back soon!</h5>
-                    {% endif %}
-                </div>
-            
-          </div>
-    </section>  -->
 <!-- #content
     <section id="section-experience" class="row my-4 text-center justify-content-center" data-aos="fade-up">
         <h3><i class="fa-solid fa-briefcase fa-lg"></i> Experiencia</h3>
@@ -170,40 +147,68 @@
     </section>
   -->
 
-    <section id="section-education" class="row my-4 text-center justify-content-center" data-aos="fade-up">
-        <h3><i class="fa-solid fa-school fa-lg"></i> Educaci&oacuten</h3>
-        
+    <section id="section-education" class="row my-4  justify-content-center" data-aos="fade-up">
+      <div class="text-center">  
+       <h3><i class="fa-solid fa-school fa-lg"></i> Educaci&oacuten</h3>
+      </div>
         {% if education %}
           {% for educ in education %}
-            <div class="card mb-3 card-exp-educ" style="max-width: 700px;">
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="container text-center mb-4 mb-lg-0 m-4 p-2">
+          <div class="card mb-3" style="max-width: 700px;">
+            <div class="row">
+              <div class="col-md-4 p-0">
+                <img style="height: 100%; width: 100%; margin:auto;" 
+                src="{{educ.imagenEduc.url}}" class="img-fluid" alt="...">
+              </div>
+              <div class="col-md-8 p-0">
+                <div class="card-body">
+                  <div class="text-center">
+                    <h5 class="card-title">{{educ.institute}}</h5>
+                  </div>
+                  <ul>
+                    <li class="card-text"><strong>Carrera:</strong> {{educ.title}}</li>
+                    <li class="card-text"><strong>Fecha de inicio:</strong> {{educ.start_date|date:"Y/m"}}</li>
                     {% if educ.end_date is null %}
-                      <p class="text-info fw-bolder mb-2 m-2">{{educ.start_date|date:"Y/m"}} - Presente</p>
+                      <li class="card-text"><strong>Fecha de fin esperada:</strong> Presente</li>
                     {% else %}
-                      <p class="text-info fw-bolder mb-2 m-2">{{educ.start_date|date:"Y/m"}}-{{educ.end_date|date:"Y/m"}}</p>
+                      <li class="card-text"><strong>Fecha de fin esperada:</strong> {{educ.end_date|date:"Y/m"}}</li>
                     {% endif %}
-                      <p class="small fw-bolder m-0"><strong>{{educ.title}}</strong></p>
-                      <p class="small text-muted m-0">{{educ.institute}}</p>
-                  </div>
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body card-size-body ">
-                    <!--<h5 class="card-title">Card title</h5>-->
-                    <p class="card-text m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                      Delectus laudantium, voluptatem quis repellendus eaque sit animi illo ipsam 
-                      amet officiis corporis sed aliquam non voluptate corrupti excepturi maxime 
-                      porro fuga.</p>
-                    
-                  </div>
+                  </ul>
                 </div>
               </div>
             </div>
+          </div>
           {% endfor %}
         {% endif %}
    
     </section>
+
+<section class="section-courses" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+    <div class="card text-center rounded-5 p-4">
+              
+      <h3 class="card-title"><i class="fa-solid fa-laptop"></i> Cursos</h3>
+        <div class=" row justify-content-center">
+          
+          {% if courses %}
+            {% for course in courses %}
+              <div class="col-md-4 p-4">
+                <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">{{course.title}}</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">{{course.institute}}</h6>
+                    <ul>
+                      <li class="card-text"><strong>Fecha del curso:</strong> {{course.start_date|date:"Y/m"}}</li>
+                      
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          {% endif %}
+          
+
+        </div>        
+      </div>
+</section>
 
 
     <section id="section-contact" class="row my-4 text-center justify-content-center" data-aos="flip-right">
