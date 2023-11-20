@@ -59,6 +59,11 @@ body.dark .card {
 .card-profile .btn-git{
   border: 1px solid lightgray;
 }
+/*
+.body.dark .card-profile .btn-git{
+  background-color: var(--greyDarkTheme);
+  border: var(--border-nav-footer);
+}*/
 
 /* CARDS PROJECT */ 
 .card-project{
@@ -128,14 +133,14 @@ body.dark .container-skill-lang{
   border-radius: 0 0 5px 5px; /* Opcional: añade esquinas redondeadas al borde */
   background-color: white;
 }
-body.dark .navbar {
+body.dark .navbar, body.dark .footer {
   background: var(--greyDarkTheme);
   border-color: white;
 }
-/*
-body.dark .navbar a {
+
+body.dark nav ul li a, body.dark nav a{
   color: rgba(242, 241, 247, 0.8784313725);
-}*/
+}
 
 body.dark .navbar a:hover {
   color: white;
@@ -152,8 +157,7 @@ body.dark .navbar a:hover {
   margin:0;
 }
 
-body.dark .footer {
-  background: var(--greyDarkTheme);
+body.dark footer .container .lead {
   border-color: white;
 }
 
