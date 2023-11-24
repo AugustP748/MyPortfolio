@@ -2,6 +2,8 @@
 {% load static %}
 {% block title %}My Portflio{% endblock %}
 {% block content %}
+
+{% if about_me_section.visible %}
     <section id="section-home mb-4" class="row justify-content-center mb-4">
         <div class="card card-profile p-0 animate__animated animate__zoomIn" style="max-width: 900px;">
             <div class="row g-0">
@@ -38,9 +40,10 @@
             </div>
         </div>
     </section>
-    
-    <section id="section-projects" class="row my-4 text-center justify-content-center" data-aos="zoom-in">
+{% endif %}
 
+{% if proyectos_section.visible %}
+    <section id="section-projects" class="row my-4 text-center justify-content-center" data-aos="zoom-in">
         <div>
             <h3><i class="fa-solid fa-laptop-code"></i> Mis Proyectos</h3>
             <p>Los proyectos más destacados en los que colaboré y creé son los siguientes</p>
@@ -73,7 +76,9 @@
             <h2>There isn't Any Project here</h2>
         {% endif %}
     </section>
+{% endif %}
 
+{% if habilidades_section.visible %}
     <section id="section-habilidades" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
         <div class="card text-center rounded-5 p-4">
             
@@ -93,8 +98,9 @@
                 </div>        
           </div>
     </section>
+{% endif %}
 
-<!-- #content
+{% if experiencia_section.visible %}
     <section id="section-experience" class="row my-4 text-center justify-content-center" data-aos="fade-up">
         <h3><i class="fa-solid fa-briefcase fa-lg"></i> Experiencia</h3>
         
@@ -142,8 +148,9 @@
             </div>
           </div>
     </section>
-  -->
-
+  {% endif %}
+  
+{% if educacion_section.visible %}
     <section id="section-education" class="row my-4 justify-content-center" data-aos="fade-up">
       <div class="text-center">  
        <h3><i class="fa-solid fa-school fa-lg"></i> Educaci&oacuten</h3>
@@ -178,38 +185,37 @@
         {% endif %}
    
     </section>
-
-<section class="section-courses" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-    
-  <div class="card text-center rounded-5 p-4">    
-      <h3 class="card-title"><i class="fa-solid fa-laptop"></i> Cursos</h3>
-        <div class=" row justify-content-center">
-          
-          {% if courses %}
-            {% for course in courses %}
-              <div class="col-md-4 p-4">
-                <div class="card" style="width: 18rem;">
-                  <div class="card-body">
-                    <h5 class="card-title">{{course.title}}</h5>
-                    <h6 class="card-subtitle mb-2 text-body-secondary">{{course.institute}}</h6>
-                    <ul>
-                      <li class="card-text"><strong>Fecha del curso:</strong> {{course.start_date|date:"Y/m"}}</li>
-                      
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            {% endfor %}
-          {% endif %}
-          
-
-        </div>        
-      </div>
-</section>
+  {% endif %}
 
 
+  {% if cursos_section.visible %}
+      <section class="section-courses" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">          
+        <div class="card text-center rounded-5 p-4">    
+            <h3 class="card-title"><i class="fa-solid fa-laptop"></i> Cursos</h3>
+              <div class=" row justify-content-center">
+                
+                {% if courses %}
+                  {% for course in courses %}
+                    <div class="col-md-4 p-4">
+                      <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">{{course.title}}</h5>
+                          <h6 class="card-subtitle mb-2 text-body-secondary">{{course.institute}}</h6>
+                          <ul>
+                            <li class="card-text"><strong>Fecha del curso:</strong> {{course.start_date|date:"Y/m"}}</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  {% endfor %}
+                {% endif %}
+              </div>        
+            </div>
+      </section>
+    {% endif %}
+
+  {% if contacto_section.visible %}
     <section id="section-contact" class="row my-4 text-center justify-content-center" data-aos="flip-right">
-        
         <div class="card rounded-5 p-4" style="width: 700px;">
             <h3><i class="fa-regular fa-envelope fa-lg"></i> Cont&aacutectame</h3>
             <form action="" method="post">
@@ -231,11 +237,10 @@
                     <label for="MensajeTextarea">Mensaje</label>
                   </div>
                   
-                  <a type="submit" class="btn btn-primary w-100">Enviar <i class="fa-regular fa-paper-plane"></i> </a>
+                  <button type="submit" class="btn btn-primary w-100">Enviar <i class="fa-regular fa-paper-plane"></i></button>
             </form>
-        </div>
-        
-          
+        </div>  
     </section>
+  {% endif %}
 
 {% endblock %}
