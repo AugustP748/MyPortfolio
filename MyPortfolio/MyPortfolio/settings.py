@@ -139,5 +139,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587  # Puerto para TLS
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'prototipodjango7@gmail.com'  # Dirección de correo desde la que enviarás
-EMAIL_HOST_PASSWORD = 'pruebasDjango97xl'  # Contraseña de tu cuenta de correo o contraseña de aplicación
+EMAIL_HOST_USER = '+++++'  # Dirección de correo desde la que enviarás
+EMAIL_HOST_PASSWORD = '******'  # Contraseña de tu cuenta de correo o contraseña de aplicación
