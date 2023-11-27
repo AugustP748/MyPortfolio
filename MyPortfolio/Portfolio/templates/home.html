@@ -189,7 +189,7 @@
 
 
   {% if cursos_section.visible %}
-      <section class="section-courses" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">          
+      <section id="section-courses" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">          
         <div class="card text-center rounded-5 p-4">    
             <h3 class="card-title"><i class="fa-solid fa-laptop"></i> Cursos</h3>
               <div class=" row justify-content-center">
@@ -218,6 +218,9 @@
     <section id="section-contact" class="row my-4 text-center justify-content-center" data-aos="flip-right">
         <div class="card rounded-5 p-4" style="width: 700px;">
             <h3><i class="fa-regular fa-envelope fa-lg"></i> Cont&aacutectame</h3>
+            <p>Puedes mandarme un mensaje por este medio o contactarme por mis redes sociales.</p>
+            <!--<a style="display: inline;"><i class="fa-brands fa-linkedin fa-2xl"></i> LinkedIn</a>
+             <a style="display: inline;width: 120px;"><i class="fa-brands fa-instagram fa-2xl"></i> instagram</a>-->
             <form action="" method="post">
               {% csrf_token %}
                 <div class="form-floating mb-3">
@@ -225,12 +228,12 @@
                     <label for="nameInput">Nombre completo</label>
                   </div>
                   <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="emailInput" name="emailInput" placeholder="name@example.com" required>
-                    <label for="emailInput">Correo electr&oacutenico</label>
+                    <input type="email" class="form-control" id="emailInput" name="emailInput" placeholder="name@example.com">
+                    <label for="emailInput">Correo electr&oacutenico (opctional)</label>
                   </div>
                   <div class="form-floating mb-3">
-                    <input type="phone" class="form-control" id="telInput" name="telInput" placeholder="3811234567" required>
-                    <label for="telInput">Tel&eacutefono</label>
+                    <input type="phone" class="form-control" id="telInput" name="telInput" placeholder="3811234567">
+                    <label for="telInput">Tel&eacutefono (opctional)</label>
                   </div>
                   <div class="form-floating mb-3">
                     <textarea class="form-control" placeholder="Mensaje" id="MensajeTextarea" name="MensajeTextarea" style="height: 100px" required></textarea>
