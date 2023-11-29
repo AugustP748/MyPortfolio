@@ -130,7 +130,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 MEDIA_URL = '/media/'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# HEROKU SETTING
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Default primary key field type
@@ -150,4 +151,7 @@ EMAIL_HOST_USER = '+++++'  # Dirección de correo desde la que enviarás
 EMAIL_HOST_PASSWORD = '******'  # Contraseña de tu cuenta de correo o contraseña de aplicación
 
 
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
+
+# FLY.IO DEPLOY
+ALLOWED_HOSTS = ["*"]  # ← Updated!
