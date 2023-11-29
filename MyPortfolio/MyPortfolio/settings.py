@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import django_heroku
+import dj_database_url
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -51,7 +54,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'middleware.middlewares.DarkModeMiddleware'
+    'middleware.middlewares.DarkModeMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'MyPortfolio.urls'
@@ -126,6 +130,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 MEDIA_URL = '/media/'
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
@@ -141,3 +148,6 @@ EMAIL_PORT = 587  # Puerto para TLS
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = '+++++'  # Dirección de correo desde la que enviarás
 EMAIL_HOST_PASSWORD = '******'  # Contraseña de tu cuenta de correo o contraseña de aplicación
+
+
+django_heroku.settings(locals())

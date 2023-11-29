@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.http import FileResponse, HttpResponse
+from django.http import FileResponse
 from django.shortcuts import render
 from Projects.models import Project, Technologie
 from Profile.models import Profile, Skill, Education
@@ -25,38 +25,27 @@ def home(request):
         
     # Data from Database 
     context={}
-    context['projects'] = Project.objects.all()
-    context['technologies'] = Technologie.objects.all()
-    context['Are_All_Not_Visible'] = not Project.objects.filter(~Q(visible=False)).exists()
-    context['profiles'] = get_object_or_404(Profile, pk=1)
-    context['skills'] = Skill.objects.all()
-    context['education'] = Education.objects.filter(course=False,visible=True)
-    context['courses'] = Education.objects.filter(course=True,visible=True)
-    context['about_me_section'] = get_object_or_404(SectionPorfolio,section_name="About_me")
-    context['proyectos_section'] = get_object_or_404(SectionPorfolio,section_name="Proyectos")
-    context['habilidades_section'] = get_object_or_404(SectionPorfolio,section_name="Habilidades")
-    context['experiencia_section'] = get_object_or_404(SectionPorfolio,section_name="Experiencia_Laboral")
-    context['educacion_section'] = get_object_or_404(SectionPorfolio,section_name="Educación")
-    context['cursos_section'] = get_object_or_404(SectionPorfolio,section_name="Cursos")
-    context['contacto_section'] = get_object_or_404(SectionPorfolio,section_name="Contáctame")
-
+    try:
+        
+        context['projects'] = Project.objects.all()
+        context['technologies'] = Technologie.objects.all()
+        context['Are_All_Not_Visible'] = not Project.objects.filter(~Q(visible=False)).exists()
+        context['profiles'] = Profile.objects.get(pk=1)
+        context['skills'] = Skill.objects.all()
+        context['education'] = Education.objects.filter(course=False,visible=True)
+        context['courses'] = Education.objects.filter(course=True,visible=True)
+        context['about_me_section'] = SectionPorfolio.objects.get(section_name="About_me")
+        context['proyectos_section'] = SectionPorfolio.objects.get(section_name="Proyectos")
+        context['habilidades_section'] = SectionPorfolio.objects.get(section_name="Habilidades")
+        context['experiencia_section'] = SectionPorfolio.objects.get(section_name="Experiencia_Laboral")
+        context['educacion_section'] = SectionPorfolio.objects.get(section_name="Educación")
+        context['cursos_section'] = SectionPorfolio.objects.get(section_name="Cursos")
+        context['contacto_section'] = SectionPorfolio.objects.get(section_name="Contáctame")
+    except:
+        ...
 
     return render(request,'home.html',context=context)
 
-
-"""def Send_Email(request):
-    #prototipodjango7@gmail.com
-    if request.method == 'POST':
-        name = request.POST.get('nameInput','')
-        phone = request.POST.get('telInput','')
-        message = request.POST.get('MensajeTextarea', '')
-        from_email = request.POST.get('emailInput', '')
-        send_mail(
-            "New email from Portfolio from "+name+"!",
-            message+name+phone,
-            from_email,
-            ["prototipodjango7@gmail.com"],
-            fail_silently=False,)"""
 
 def descargar_archivo(request):
     profile = get_object_or_404(Profile, pk=1)
